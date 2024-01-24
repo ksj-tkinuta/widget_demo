@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
+  SecondPage(this.id);
+  final String id;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +41,23 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           Container(
-              child: Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Button'),
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(id,
+                  style: TextStyle(
+                    fontSize: 100
+                  ),),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Button'),
+                    ),
 
+                  ),
+                ],
               )
           )
         ],
